@@ -1,34 +1,86 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>API Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
 
 </head>
 
 <body>
-    <div class="container">	
-        <div class="user-container"></div>	
-        <div class="quote-container"></div>	
-        <div class="content-container">	
-            <div class="pokemon-container"></div>	
-            <div class="meat-container"></div>	
-        </div>	
-        <div class="friends">	
-            <h4>Friends</h4>	
-            <div class="friends-container">	
-            </div>	
-        </div>	
-        <div class="buttons">	
-            <button>Load User Data</button>	
-            <button>Display User</button>	
-        </div>	
+    <div class="container">
+
+        <div class="user-container"></div>
+        
+        <div class="quote-container"></div>
+
+        <div class="content-container">
+            <div class="pokemon-container"></div>
+            <div class="meat-container"></div>
+        </div>
+
+        <div class="friends">
+            <h4>Friends</h4>
+            <div class="friends-container"></div>
+        </div>
+
+        <div class="buttons">
+            <button id="loadUserData">Load User Data</button>
+            <button id="displayUser">Display User</button>
+        </div>
+
     </div>
+
+    <script id="userTemplate" type="text/x-handlebars-template">
+        <img id="profile-pic" src={{imageURL}}>
+        <div class="user-info">
+            {{firstname}} {{lastname}} <br>
+            {{city}} {{state}}
+        </div>
+    </script>
+
+    <script id="quoteTemplate" type="text/x-handlebars-template">
+        <div>Favorite quote:</div>
+        <p>"{{quote}}"</p>
+        <p>- Kanye</p>
+    </script>
+
+    <script id="pokemonTemplate" type="text/x-handlebars-template">
+        <img id="pokemon-image" src={{imageURL}}>
+        <p id="pokemon-text">Favorite Pokemon: {{pokemonName}}</p>
+    </script>
+
+    <script id="aboutTemplate" type="text/x-handlebars-template">
+        <div class="meat-text">
+            About me:<br>
+            {{about}}
+        </div>
+    </script>
+
+    <script id="friendsTemplate" type="text/x-handlebars-template">
+        <ul>
+            {{#each friend}}
+            <li>{{friend}}</li>
+            <br>
+            {{/each}}
+        </ul>
+    </script>
+
 </body>
+
+<script src="Model.js"></script>
+<Script SRC="View.js"></SCRipt>
+<script src="Controller.js"></script>
 
 </html>
