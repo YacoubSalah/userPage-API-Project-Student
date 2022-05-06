@@ -57,13 +57,13 @@ class APIManager {
     }
 
     #pokemonGenerator(){
-        const randomNumber = Math.floor(Math.random() * 1126)
+        const randomNumber = Math.floor(Math.random() * 898)
         const newURL = "https://pokeapi.co/api/v2/pokemon/" + randomNumber
         $.ajax({
             method: "GET",
             url: newURL,
             success: this.#pokemonSuccess,
-            error: this.#pokemonError // how to tell that this function has parameters without invoking it ?
+            error: this.#pokemonError
         })
     }
 
@@ -74,9 +74,8 @@ class APIManager {
         this.data.pokemon = pokemon
     }
 
-    #pokemonError(randomNumber, newURL) {
-        alert("Internet connection - Poki Get" + randomNumber)
-        console.log(newURL)
+    #pokemonError() {
+        alert("Internet connection - Poki Get")
     }
 
     #aboutMeGenerator () {

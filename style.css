@@ -67,7 +67,6 @@ body {
     box-shadow: -1px -1px 3px black;
     padding-left: 1vmax;
 }
-
 ul {
     list-style-type: none;
 }
@@ -85,7 +84,6 @@ button {
     font-size: 1vmax;
     cursor: pointer;
 }
-
 #gen-page:focus {
     outline: none;
 }
@@ -113,4 +111,26 @@ button {
     padding: 1vw;
     font-size: 1.2vmax;
     font-family: 'Indie Flower', cursive;
+}
+.loadUserMenu-container{
+
+visibility: hidden;
+padding: .8vw;
+position: absolute;
+width: 200px;
+border-radius: 6px;
+background-color: #A1B5BA;
+box-shadow: 1px 1px 3px black;
+}
+
+#loadUserMenuElement{
+    display: inline-block;
+    color: #ecf0f1; 
+    word-break: normal;
+  overflow-wrap: break-word;
+}
+#deleteSavedUser{
+    color: red;
+    display: inline-block;
+    padding: 0.4vw;
 }

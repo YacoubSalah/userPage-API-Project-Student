@@ -10,8 +10,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
+
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 
+    <script src="https://kit.fontawesome.com/8923d82949.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
@@ -22,7 +24,7 @@
     <div class="container">
 
         <div class="user-container"></div>
-        
+
         <div class="quote-container"></div>
 
         <div class="content-container">
@@ -38,6 +40,11 @@
         <div class="buttons">
             <button id="loadUserData">Load User Data</button>
             <button id="displayUser">Display User</button>
+            <button id="saveUser">Save User</button>
+            <button id="loadSavedUser">Load User</button>
+        </div>
+
+        <div id="loadUserMenu-container" class="loadUserMenu-container">
         </div>
 
     </div>
@@ -77,9 +84,21 @@
         </ul>
     </script>
 
+    <script id="loadUserMenuTemplate" type="text/x-handlebars-template">
+        <ul>
+            {{#each savedUser}}
+                <li >
+                    <i id="deleteSavedUser" class="fa-solid fa-x"></i>
+                    <p id="loadUserMenuElement">{{userName}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    </script>
+
 </body>
 
 <script src="Model.js"></script>
+<script src="localStorage.js"></script>
 <Script SRC="View.js"></SCRipt>
 <script src="Controller.js"></script>
 
